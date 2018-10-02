@@ -1,0 +1,55 @@
+{
+  "name": "react-boilerplate",
+  "homepage": "https://v2.dashboard.epsagon.com/",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "antd": "^3.6.3",
+    "axios": "^0.18.0",
+    "classnames": "^2.2.6",
+    "mobx": "^5.0.3",
+    "mobx-react": "^5.2.3",
+    "moment": "^2.22.2",
+    "node-sass-chokidar": "^1.3.0",
+    "qs": "^6.5.2",
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1",
+    "react-router": "^4.3.1",
+    "react-router-dom": "^4.3.1"
+  },
+  "scripts": {
+    "clean": "rm -rf ./build",
+    "preinstall": ". dev_scripts/githooks/node-version",
+    "build-css": "node-sass-chokidar src/ -o src/",
+    "watch-css": "npm run build-css && node-sass-chokidar src/ -o src/ --watch --recursive",
+    "start": "PORT=3006 npm-run-all -p watch-css start-rewired",
+    "build": "npm run clean && npm-run-all -p build-css build-rewired",
+    "start-rewired": "react-app-rewired start",
+    "build-rewired": "react-app-rewired build",
+    "lint": "eslint -c .eslintrc src --ext .js",
+    "lintfix": "node_modules/eslint/bin/eslint.js src --fix",
+    "test": "react-scripts test --env=jsdom $0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint",
+      "post-merge": "npm run build-css"
+    }
+  },
+  "devDependencies": {
+    "babel-eslint": "7.2.3",
+    "babel-plugin-import": "^1.8.0",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb": "^17.0.0",
+    "eslint-plugin-import": "^2.13.0",
+    "eslint-plugin-jsx-a11y": "^6.1.1",
+    "eslint-plugin-react": "^7.10.0",
+    "husky": "^1.0.0-rc.13",
+    "jest-localstorage-mock": "^2.2.0",
+    "npm-run-all": "^4.1.3",
+    "react-app-rewired": "^1.5.2",
+    "react-scripts": "1.1.4"
+  }
+}

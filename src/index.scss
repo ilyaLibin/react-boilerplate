@@ -1,0 +1,30 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  min-width: $displayMinWidth;
+}
+
+ul {
+  padding-left: 0;
+
+  li {
+    list-style: none;
+  }
+}
+
+* {
+  animation-duration: 0.05s !important;
+}
+
+.ant-spin-dot-spin, .auth0-loading {
+  animation-duration: 1s !important;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+.ant-tag {
+  cursor: default !important;
+}

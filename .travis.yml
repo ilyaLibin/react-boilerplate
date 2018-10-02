@@ -1,0 +1,34 @@
+language: node_js
+
+node_js:
+  - "8"
+
+# notifications:
+#     slack:
+#       rooms:
+#         - none
+#       on_pull_requests: false
+
+branches:
+  only:
+    - master
+
+install:
+  - npm install
+
+jobs:
+  include:
+    - stage: lint-and-test
+      script:
+        - npm run build-css
+        - npm run lint
+        - npm run test
+
+    # - stage: deploy
+    #   script:
+    #     - npm run deploy:production
+
+stages:
+  - lint-and-test
+  # - name: deploy
+    # if: branch = masterHOLD AND type = push
