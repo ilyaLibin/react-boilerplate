@@ -1,5 +1,3 @@
 import { constants } from '.';
 
-export const getApiPath = () => {
-  return constants.LOCAL_PATH;
-}
+export const getApiPath = () => constants.LOCAL_PATH

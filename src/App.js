@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import './App.css';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import { withRouter } from 'react-router'
 import initialize from './initializers';
 import MainModel from './models';
+import ExampleView from './view_example';
 
 initialize();
 
@@ -20,15 +20,14 @@ class App extends Component {
   render() {
     return (
       <Router>
-          <main>
-            <Switch>
-              <Route path="/"
-                exact
-                render={props => <InsightsView {...props}
-                  store={store}/>}/>
-            </Switch>
-          </main>
-        </div>
+        <main>
+          <Switch>
+            <Route path="/"
+              exact
+              render={props => <ExampleView {...props}
+                store={store}/>}/>
+          </Switch>
+        </main>
       </Router>
     );
   }

@@ -7,4 +7,3 @@ export const examplePostRequest = body => authRequest.post('relative_route', {
 
 export const exampleGetRequest = () => authRequest.get('relative_route', {})
   .then(response => response.data)
-

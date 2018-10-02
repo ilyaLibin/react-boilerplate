@@ -16,7 +16,7 @@ class Example extends Component {
 
   render() {
     return (
-      <div className="example-wrapper"></div>
+      <div className="example-wrapper" />
     )
   }
 }
